@@ -1,15 +1,6 @@
 'use strict';
 
 exports.init = function () {
-    var checkCorrectTypes = function (object, prototypes) {
-        for (var i = 0; i < prototypes.length; i++) {
-            if (Object.getPrototypeOf(object) === prototypes[i]) {
-                return true;
-            }
-        }
-        return false;
-    };
-
     Object.prototype.checkContainsKeys = function (keys) {
         if (checkCorrectTypes(this, [Object.prototype, Array.prototype])) {
             var result = true;
@@ -97,4 +88,14 @@ exports.init = function () {
             return (this.split(' ').length == count);
         }
     };
+
+    var checkCorrectTypes = function (object, prototypes) {
+        for (var i = 0; i < prototypes.length; i++) {
+            if (Object.getPrototypeOf(object) === prototypes[i]) {
+                return true;
+            }
+        }
+        return false;
+    };
+
 };
