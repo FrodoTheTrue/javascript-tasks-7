@@ -79,7 +79,7 @@ exports.init = function () {
 
     Object.prototype.checkHasParamsCount = function (count) {
         if (checkCorrectTypes(this, [Function.prototype])) {
-            return this.length == count;
+            return this.length === count;
         }
     },
 
